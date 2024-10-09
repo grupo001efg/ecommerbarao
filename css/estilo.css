@@ -124,3 +124,29 @@ nav ul li a:hover {
     align-items: center;
 }
 
+#carrinho ul li button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#carrinho ul li button:hover {
+    background-color: #52141a;
+}  
+
+#total {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+button {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+ 

@@ -43,3 +43,30 @@ function atualizarEstoque(produtoId) {
         botaoElemento.textContent = "Esgotado";
     }
 }
+
+function atualizarCarrinho {
+    const listaCarrinho = document.getElementById('listaCarrinho');
+    const totalElemento = document.getElementById('total');
+
+    if (listaCarrinho && totalElemento) {
+        listaCarrinho.innerHTML = '';
+        carrinho.forEach(element => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+            ${item.none} - R$ ${iten.preco.toFixed(2)} x ${iten.quantidade}
+            <button onclick="removerDoCarrinho('${iten.none}')">Remover Um</button>
+            <input type="number" min="1" value="${iten.quantidade}" onchange="ajustarQuantidade('${iten.none}', this.value)">
+            `;
+            listaCarrinho.append(li);
+        });
+        totalElemento.textContent = `Total: R$ ${total.toFixed(2)}`;
+    }
+}
+
+function atualizarQantidadeCarrinho {
+    const quantidadeCarrinhoElemento = document.getElementById('quantidadeCarrinho');
+    const quantidadeTotal = carrinho.reduce((acc, iten) => acc + iten.quantidade, 0);
+    if (quantidadeCarrinhoElemento){
+        quantidadeCarrinhoElemento.textContent = quantidadeTotal;
+    }
+}
